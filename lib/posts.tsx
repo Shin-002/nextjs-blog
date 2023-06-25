@@ -29,7 +29,7 @@ export function getSortedPostsData() {
 
   // 日付で投稿をソートする
   return allPostsData.sort((a, b) => {
-    if (a.date < b.date) {
+    if (a < b) {
       return 1
     } else {
       return -1
