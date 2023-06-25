@@ -3,10 +3,16 @@ import utilStyles from '../../styles/utils.module.css';
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 export const siteTitle = "yuyu-chin-anagooo";
 
-export default function Layout({children, home}) {
+type Props = {
+    children: React.ReactNode,
+    home?: boolean
+}
+
+export const Layout: React.FC<Props> = ({children, home}) => {
   const myName = "yuyu";
   return (
     <div className={styles.container}>
