@@ -2,10 +2,10 @@ import Head from 'next/head';
 import Layout, {siteTitle} from "../components/layout/layout";
 import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
-import {client} from "../libs/client";
+import {client, getEnv} from "../libs/microcms-client";
 
 export async function getStaticProps() {
-  const data = await client.get({endpoint: 'blogs'})
+  const data = await client.get({endpoint: getEnv().endpoint})
   return {
     props: {
       allPostsData: data.contents
